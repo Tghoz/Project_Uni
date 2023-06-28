@@ -1,1 +1,2 @@
-console.log("hla");
+const ola = "ola mundo xd";
+console.log(ola);
