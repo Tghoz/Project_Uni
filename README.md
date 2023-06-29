@@ -6,4 +6,5 @@ Estudiantes:
 -Yovanny Travieso 
  CI: 27.797.609
 
-M
+-Maibeth Ortega
+CI: 30.561.031
