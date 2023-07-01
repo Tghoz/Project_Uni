@@ -7,13 +7,13 @@ Estudiantes:
 
  CI: 27.797.609
 
-user: Tghoz
+user: @Tghoz
 
 -Maibeth Ortega
 
 CI: 30.561.031
 
-user: Maibethortega
+user: @Maibethortega
 
 prf: Reynaldo Gonzalez 
 
