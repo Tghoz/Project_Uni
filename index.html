@@ -4,26 +4,54 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              fondo: "#203746",
+              otro_fondo: "#344957",
+              boton: "#A390E4",
+              Text: "#E6E4DB",
+            },
+          },
+        },
+      };
+    </script>
   </head>
-  <body>
-    <div class="  flex min-h-screen justify-center items-center bg-gray-900"> 
-      <div class="fixed justify-center items-center w-full max-w-xs pb-60" >
-        <p class=" text-gray-300 pb-1 " > Email address:</p>
-        <input type="email" id="email" class=" mb-5  bg-gray-50  text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="UserName@gamail.com" required>   
-        <div class="text-center">
-          <button class="text-slate-300  pl-10 pr-10 pt-2 pb-2  bg-sky-500 rounded-lg">Entrar</button>
-        </div>
+  <body class="bg-fondo">
+    <div class="flex min-h-screen justify-center items-center">
+      <div
+        class="justify-center items-center w-full max-w-xs p-8 mb-60 bg-otro_fondo shadow-2xl rounded-xl"
+      >
+        <form action="" method="post">
+          <p class="text-Text pb-1 font-bold text-xl">Email address:</p>
+          <input
+            type="email"
+            id="email"
+            class="mb-5 bg-gray-50 text-gray-900 text-sm rounded-lg focus:ring-fondo focus:border-fondo block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
+            placeholder="UserName@gamail.com"
+            required
+          />
+          <div class="text-center">
+            <button
+              class="text-Text pl-10 pr-10 pt-2 pb-2 bg-boton rounded-lg"
+              type="submit"
+            >
+              Entrar
+            </button>
+          </div>
+        </form>
       </div>
+
+      <footer class="w-full absolute bottom-0 bg-otro_fondo p-10">
+        <!-- datos del footer aca -->
+      </footer>
     </div>
   </body>
 </html>
 
-
-
-
-
 <!-- preguntar como hacer que se ponga el borde rojo cuando el corre este mal o tenga un error en la verificacion -->
-
 
 <!--
 
