@@ -65,7 +65,7 @@
 
             <div class="w-full h-screen overflow-x-hidden  flex flex-col">
                 <main class="w-full flex-grow pl-6">
-                    <h1 class="text-3xl text-Text p-1 ">Formulario, Registro de Cliente. </h1>
+                    <h1 class="felx top-5 text-3xl text-Text   ">Formulario, Registro de Cliente. </h1>
                     <div class="flex flex-wrap">
                         <div class="w-full h-full">
                             <p class="text-Text text-3xl flex pb-4 ">
@@ -74,9 +74,9 @@
                             </p>
 
 
-                            <!-- ? Crear formularios Aqui  -->
+                            <!-- ? Crear formularios Aqui de registro  -->
                             
-                            <div class="mx-auto max-w-6x py-20 px-12 lg:px-24  mb-24">
+                            <div class="mx-auto max-w-6x py-20 px-12 lg:px-24  mb-0">
                                 <form>
                                     <div class="bg-fondoM shadow-md rounded px-8 pt-6 pb-8 mb-4 flex flex-col">
                                         <div class="-mx-3 md:flex mb-6">
@@ -111,6 +111,67 @@
                                     </div>
                                 </form>
                             </div>
+
+                        <!-- ? Tabla registrados -->
+
+                            <div class="container mx-auto py-6 px-4" >
+                                <h1 class="text-3xl py-4 border-b mb-10">Datatable</h1>
+		                        <div class="overflow-x-auto bg-white rounded-lg shadow overflow-y-auto relative" style="height: 405px;">
+			                        <table class="border-collapse table-auto w-full whitespace-no-wrap bg-white table-striped relative">
+				                        <thead>
+					                        <tr class="text-left">
+						                        <th class="py-2 px-3 sticky top-0 border-b border-gray-200 bg-gray-100">
+							                        <label
+								                        class="text-teal-500 inline-flex justify-between items-center hover:bg-gray-200 px-2 py-2 rounded-lg cursor-pointer">
+								                    <input type="checkbox" class="form-checkbox focus:outline-none focus:shadow-outline">
+							                        </label>
+						                        </th>
+						                    
+							                        <th class="bg-gray-100 sticky top-0 border-b border-gray-200 px-6 py-2 text-gray-600 font-bold tracking-wider uppercase text-xs hola">
+                                                     hola
+                                                    </th>
+							                        <th class="bg-gray-100 sticky top-0 border-b border-gray-200 px-6 py-2 text-gray-600 font-bold tracking-wider uppercase text-xs hola">
+                                                     hola
+                                                    </th>
+							                        <th class="bg-gray-100 sticky top-0 border-b border-gray-200 px-6 py-2 text-gray-600 font-bold tracking-wider uppercase text-xs hola">
+                                                     hola
+                                                    </th>
+						              
+					                        </tr>
+				                        </thead>
+				                        <tbody>
+					                        <template>
+						                        <tr>
+							                        <td class="border-dashed border-t border-gray-200 px-3">
+								                    <label
+									                    class="text-teal-500 inline-flex justify-between items-center hover:bg-gray-200 px-2 py-2 rounded-lg cursor-pointer">
+									                <input type="checkbox" class="form-checkbox rowCheckbox focus:outline-none focus:shadow-outline">
+								                    </label>
+							                        </td>
+							                        <td class="border-dashed border-t border-gray-200 userId">
+								                        <span class="text-gray-700 px-6 py-3 flex items-center"></span>
+							                        </td>
+							                        <td class="border-dashed border-t border-gray-200 firstName">
+								                        <span class="text-gray-700 px-6 py-3 flex items-center"></span>
+							                        </td>
+							                        <td class="border-dashed border-t border-gray-200 lastName">
+								                        <span class="text-gray-700 px-6 py-3 flex items-center"></span>
+							                        </td>
+							                        <td class="border-dashed border-t border-gray-200 emailAddress">
+								                        <span class="text-gray-700 px-6 py-3 flex items-center"></span>
+							                        </td>
+							                        <td class="border-dashed border-t border-gray-200 gender">
+								                        <span class="text-gray-700 px-6 py-3 flex items-center"></span>
+							                        </td>
+							                        <td class="border-dashed border-t border-gray-200 phoneNumber">
+								                        <span class="text-gray-700 px-6 py-3 flex items-center"></span>
+							                        </td>
+						                        </tr>
+					                        </template>
+				                        </tbody>
+			                        </table>
+		                        </div>
+	                        </div>
                         </div>
                     </div>
                 </main>
@@ -122,7 +183,6 @@
 
 
 
-<!--? Cambiar la paleta de colores a un color mas ombre-->
 
 
 
