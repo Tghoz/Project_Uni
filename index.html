@@ -9,21 +9,21 @@
         theme: {
           extend: {
             colors: {
-              fondo: "#203746",
-              otro_fondo: "#344957",
-              boton: "#A390E4",
-              Text: "#E6E4DB",
+              fondo: "#545F66",
+              fondoM: "#40494F",
+              otro_fondo: "#829399",
+              boton: "#EA526F",
+              Text: "#E2EAF3",
             },
           },
         },
       };
     </script>
   </head>
-  <body class="bg-fondo">
-    <div class="flex min-h-screen justify-center items-center">
-      <div
-        class="justify-center items-center w-full max-w-xs p-8 mb-60 bg-otro_fondo shadow-2xl rounded-xl"
-      >
+  <!-- bg-gradient-to-r from-fondo to-otro_fondo -->
+  <body class="bg-gradient-to-r from-fondo to-otro_fondo">
+    <div class="flex min-h-screen justify-center items-center ">
+      <div class="justify-center items-center w-full max-w-xs p-8 mb-60 bg-otro_fondo shadow-2xl rounded-xl">
         <form action="" method="post">
           <p class="text-Text pb-1 font-bold text-xl">Email address:</p>
           <input
@@ -44,7 +44,7 @@
         </form>
       </div>
 
-      <footer class="w-full absolute bottom-0 bg-otro_fondo p-10">
+      <footer class="w-full absolute bottom-0 bg-fondoM p-5">
         <!-- datos del footer aca -->
       </footer>
     </div>
