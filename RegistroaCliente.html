@@ -65,12 +65,17 @@
 
             <div class="w-full h-screen overflow-x-hidden  flex flex-col">
                 <main class="w-full flex-grow pl-6">
-                    <h1 class="felx top-5 text-3xl text-Text   ">Formulario, Registro de Cliente. </h1>
+                    <div class="flex top-5 pl-10 pt-10  justify-center items-center ">
+                        
+                        <svg class="mr-5   h-10 w-10 text-white text-center"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round">  <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />  <circle cx="8.5" cy="7" r="4" />  <line x1="20" y1="8" x2="20" y2="14" />  <line x1="23" y1="11" x2="17" y2="11" /></svg>
+
+                        <!-- <svg class=" mr-5   h-10 w-10 text-Text text-center "  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round">  <polyline points="21 8 21 21 3 21 3 8" />  <rect x="1" y="3" width="22" height="5" />  <line x1="10" y1="12" x2="14" y2="12" /></svg> -->
+                        <h1 class="text-4xl text-white">Registro de Cliente </h1>
+                     </div>
                     <div class="flex flex-wrap">
                         <div class="w-full h-full">
-                            <p class="text-Text text-3xl flex pb-4 ">
-                                <svg class="h-8 w-8 text-Text mr-3"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round">  <polyline points="21 8 21 21 3 21 3 8" />  <rect x="1" y="3" width="22" height="5" />  <line x1="10" y1="12" x2="14" y2="12" /></svg>
-                                Datos.
+                            <p class="text-Text text-3xl pl-10">
+                                
                             </p>
 
 
@@ -115,7 +120,13 @@
                         <!-- ? Tabla registrados -->
 
                             <div class="container mx-auto py-6 px-4" >
-                                <h1 class="text-3xl py-4 border-b mb-10">Datatable</h1>
+                                <div class="flex top-5 pl-10 pt-10  justify-center items-center mb-8 ">
+                                    <svg class="mr-5   h-10 w-10 text-white text-center"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/>
+                                    </svg>
+
+                                    <h2 class=" text-4xl text-white">Datatable</h2>
+                                </div>
 		                        <div class="overflow-x-auto bg-white rounded-lg shadow overflow-y-auto relative" style="height: 405px;">
 			                        <table class="border-collapse table-auto w-full whitespace-no-wrap bg-white table-striped relative">
 				                        <thead>
@@ -170,11 +181,14 @@
 					                        </template>
 				                        </tbody>
 			                        </table>
-		                        </div>
-	                        </div>
+		                        </div>  
+                            </div>  
                         </div>
                     </div>
                 </main>
+                <footer class="w-full relative bottom-0 bg-fondoM p-5">
+                    <!-- datos del footer aca -->
+                </footer>
             </div>
         </div>
     </div>
