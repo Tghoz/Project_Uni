@@ -33,17 +33,17 @@
                 </button>
             </div>
             <nav class="text-while text-base pt-3">
-                <a href="RegistroaCliente.html" class="flex text-xl  items-center text-Text opacity-75 hover:opacity-100 py-4 pl-4 hover:bg-fondoM bg-fondoM ">
+                <a href="RegistroaCliente.html" class="flex text-xl  items-center text-Text opacity-75 hover:opacity-100 py-4 pl-4 hover:bg-fondoM  ">
                     <svg class="h-8 w-8 text-Text mr-3 "  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round">  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />  <circle cx="12" cy="7" r="4" /></svg>
                     Registrar
                     <br> 
                     Clientes
                 </a>
-                <a href="RegistroaProducto.html" class="flex text-xl items-center text-Text opacity-75 hover:opacity-100 py-4 pl-4 hover:bg-fondoM">
+                <a href="RegistroaProducto.html" class="flex text-xl items-center text-Text opacity-75 hover:opacity-100 py-4 pl-4 hover:bg-fondoM bg-fondoM ">
                     <svg class="h-8 w-8 text-Text mr-3"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round">  <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z" />  <line x1="7" y1="7" x2="7.01" y2="7" /></svg>
                     Registrar Producto 
                 </a>
-                <a href="#" class="flex text-xl items-center text-Text opacity-75 hover:opacity-100 py-4 pl-4 hover:bg-fondoM">
+                <a href="facturas.html" class="flex text-xl items-center text-Text opacity-75 hover:opacity-100 py-4 pl-4 hover:bg-fondoM">
                     <svg class="h-8 w-8 text-Text mr-3"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <rect x="5" y="3" width="14" height="18" rx="2" />  <line x1="9" y1="7" x2="15" y2="7" />  <line x1="9" y1="11" x2="15" y2="11" />  <line x1="9" y1="15" x2="13" y2="15" /></svg>
                     Facturas
                 </a>
@@ -65,45 +65,47 @@
 
             <div class="w-full h-screen overflow-x-hidden  flex flex-col">
                 <main class="w-full flex-grow pl-6">
-                    <div class="flex top-5 pl-10 pt-10  justify-center items-center ">
+                    <div class="flex top-5 pl-10 pt-10  justify-center items-center " >
+                        <svg class="mr-5   h-10 w-10 text-white text-center"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <path d="M14 3v4a1 1 0 0 0 1 1h4" />  <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" />  <line x1="12" y1="11" x2="12" y2="17" />  <line x1="9" y1="14" x2="15" y2="14" /></svg>
                         
-                        <svg class="mr-5   h-10 w-10 text-white text-center"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round">  <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />  <circle cx="8.5" cy="7" r="4" />  <line x1="20" y1="8" x2="20" y2="14" />  <line x1="23" y1="11" x2="17" y2="11" /></svg>
-
-  
-                        <h1 class="text-4xl text-white">Registro de Cliente </h1>
-                     </div>
-                    <div class="flex flex-wrap">
+                        <h1 class="text-4xl text-white "> Registro de Productos. </h1>
+                    </div>
+                    <div class="flex-wrap">
                         <div class="w-full h-full">
-                            <p class="text-Text text-3xl pl-10">
-                                
-                            </p>
-
-
-                            <!-- ? Crear formularios Aqui de registro  -->
                             
-                            <div class="mx-auto max-w-6x py-20 px-12 lg:px-24  mb-0">
+                            <!-- ? Crear formularios Aqui  -->
+
+                                   
+                            <div class="relative  mx-auto max-w-6x py-20 px-12 lg:px-24  mb-0">
                                 <form>
                                     <div class="bg-fondoM shadow-md rounded px-8 pt-6 pb-8 mb-4 flex flex-col">
                                         <div class="-mx-3 md:flex mb-6">
                                             <div class="md:w-1/2 px-3 mb-6 md:mb-0">
                                                 <label class="flex uppercase tracking-wide text-Text text-xl font-bold mb-2" for="company">
-                                                    Nombre y Apellido*
+                                                    Categoria*
                                                 </label>
-                                                <input class="mb-5 bg-gray-50 text-gray-900 text-sm rounded-lg focus:ring-fondo focus:border-fondo block w-full p-2.5" mb-3" id="company" type="text" placeholder="Tutsplus">
+
+                                                <select name="" id="" class="mb-5 bg-gray-50 text-gray-900 text-sm rounded-lg focus:ring-fondo focus:border-fondo block w-full p-2.5 mb-3">
+                                                    <option value="1">perro</option>
+                                                    <option value="2">dereck</option>
+                                                    <option value="3">gato</option>
+                                                </select>
+
+                                                <!--<input class="mb-5 bg-gray-50 text-gray-900 text-sm rounded-lg focus:ring-fondo focus:border-fondo block w-full p-2.5" mb-3" id="company" type="text" placeholder="Tutsplus"> -->
                                             </div>
                                             <div class="md:w-1/2 px-3">
-                                                <label class="flex uppercase tracking-wide text-Text text-xl font-bold mb-2" for="title">
-                                                    C.I*
+                                                <label class="flex uppercase tracking-wide text-Text text-xl font-bold mb-2 " for="title">
+                                                    Cantidad*
                                                 </label>
-                                                <input class="mb-5 bg-white text-gray-900 text-sm rounded-lg focus:ring-fondo focus:border-fondo block w-full p-2.5" id="title" type="number" placeholder="Cedula">
+                                                <input class="mb-5 bg-white text-gray-900 text-sm rounded-lg focus:ring-fondo focus:border-fondo block w-full p-2.5" id="title" type="number" placeholder="Cantidad">
                                                 </div>
                                         </div>
                                         <div class="-mx-3 md:flex mb-6">
                                             <div class="md:w-full px-3">
                                                 <label class="flex uppercase tracking-wide text-Text text-xl font-bold mb-2" for="application-link">
-                                                    Direccion
+                                                    Producto*
                                                 </label>
-                                                <input class="mb-5 bg-gray-50 text-gray-900 text-sm rounded-lg focus:ring-fondo focus:border-fondo block w-full p-2.5" id="application-link" type="text" placeholder="...">
+                                                <input class="mb-5 bg-gray-50 text-gray-900 text-sm rounded-lg focus:ring-fondo focus:border-fondo block w-full p-2.5" id="application-link" type="text" placeholder="Nombre">
                                             </div>
                                         </div>
                                         <div class="-mx-3 md:flex mt-2">
@@ -117,15 +119,15 @@
                                 </form>
                             </div>
 
-                        <!-- ? Tabla registrados -->
-
-                            <div class="container mx-auto py-6 px-4" >
+                           <!--? tabla de prodctos --> 
+                            
+                             <div class="container mx-auto py-6 px-4" >
                                 <div class="flex top-5 pl-10 pt-10  justify-center items-center mb-8 ">
                                     <svg class="mr-5   h-10 w-10 text-white text-center"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/>
                                     </svg>
 
-                                    <h2 class=" text-4xl text-white">Clientes</h2>
+                                    <h2 class=" text-4xl text-white">Productos</h2>
                                 </div>
 		                        <div class="overflow-x-auto bg-white rounded-lg shadow overflow-y-auto relative" style="height: 405px;">
 			                        <table class="border-collapse table-auto w-full whitespace-no-wrap bg-white table-striped relative">
@@ -142,13 +144,13 @@
                                                      Id
                                                     </th>
 							                        <th class="bg-gray-100 sticky top-0 border-b border-gray-200 px-6 py-2 text-gray-600 font-bold tracking-wider uppercase text-xs hola">
+                                                     Categoria
+                                                    </th>
+							                        <th class="bg-gray-100 sticky top-0 border-b border-gray-200 px-6 py-2 text-gray-600 font-bold tracking-wider uppercase text-xs hola">
                                                      Nombre
                                                     </th>
 							                        <th class="bg-gray-100 sticky top-0 border-b border-gray-200 px-6 py-2 text-gray-600 font-bold tracking-wider uppercase text-xs hola">
-                                                     C.I
-                                                    </th>
-							                        <th class="bg-gray-100 sticky top-0 border-b border-gray-200 px-6 py-2 text-gray-600 font-bold tracking-wider uppercase text-xs hola">
-                                                     Direccion
+                                                     Cantidad
                                                     </th>
 						              
 					                        </tr>
@@ -185,22 +187,28 @@
 				                        </tbody>
 			                        </table>
 		                        </div>  
-                            </div>  
+                            </div> 
+
+
+
+
+
+
+
+
+
+
                         </div>
                     </div>
                 </main>
-                <footer class="w-full relative bottom-0 bg-fondoM p-5">
-                    <div class="flex  h-full bg-orange-700"></div>
+                 <footer class="w-full relative bottom-0 bg-fondoM p-5">
+                    <!-- datos del footer aca -->
                 </footer>
             </div>
         </div>
     </div>
 </body>
 </html>
-
-
-
-
 
 
 <!-- altocar 639 se va pa la mierda -->

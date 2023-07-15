@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                fondo: "#545F66",
+                fondoM: "#40494F",
+                otro_fondo: "#829399",
+                boton: "#EA526F",
+                Text: "#E2EAF3",
+                Headers: "#A5B1B6"
+              },
+            },
+          },
+        };
+      </script>
+    <title>Registro</title>
+</head>
+<body>
+    <!--  -->
+    <div class="flex bg-gradient-to-r from-otro_fondo to-fondo">
+        <div class=" relative bg-fondo h-screen w-64 hidden sm:block shadow-xl">
+            <div class="p-6">
+                <p class="text-Text text-3xl uppercase" > Admi</p>
+                <button class="w-full bg-white  font-semibold py-2 mt-5 rounded-br-lg rounded-bl-lg rounded-tr-lg shadow-lg hover:shadow-xl hover:bg-gray-300 flex items-center justify-center">
+                    +  Nueva Factura
+                </button>
+            </div>
+            <nav class="text-while text-base pt-3">
+                <a href="RegistroaCliente.html" class="flex text-xl  items-center text-Text opacity-75 hover:opacity-100 py-4 pl-4 hover:bg-fondoM bg-fondoM ">
+                    <svg class="h-8 w-8 text-Text mr-3 "  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round">  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />  <circle cx="12" cy="7" r="4" /></svg>
+                    Registrar
+                    <br> 
+                    Clientes
+                </a>
+                <a href="RegistroaProducto.html" class="flex text-xl items-center text-Text opacity-75 hover:opacity-100 py-4 pl-4 hover:bg-fondoM">
+                    <svg class="h-8 w-8 text-Text mr-3"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round">  <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z" />  <line x1="7" y1="7" x2="7.01" y2="7" /></svg>
+                    Registrar Producto 
+                </a>
+                <a href="facturas.html" class="flex text-xl items-center text-Text opacity-75 hover:opacity-100 py-4 pl-4 hover:bg-fondoM">
+                    <svg class="h-8 w-8 text-Text mr-3"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <rect x="5" y="3" width="14" height="18" rx="2" />  <line x1="9" y1="7" x2="15" y2="7" />  <line x1="9" y1="11" x2="15" y2="11" />  <line x1="9" y1="15" x2="13" y2="15" /></svg>
+                    Facturas
+                </a>
+            </nav>
+        </div>
+
+        <div class="relative  w-full flex flex-col h-screen overflow-y-hidden"" >
+            <header class="w-full items-center bg-otr_fondo py-2 px-6 hidden sm:flex border-b-2 border-fondoM ">
+                <div class="w-1/2"></div>
+                <div class="relative w-1/2 flex justify-end">
+                    <button class=" relative z-10 w-12 h-12 rounded-full overflow-hidden border-4 border-gray-400 hover:border-gray-300
+                    focus:border-gray-300 focus:outline-none ">
+                        <p class="text-Text uppercase text-center">
+                            u  <!--  !lo que se vaya a poner aqui referenciadno al unsuario main -->
+                        </p>
+                    </button>
+                </div>
+            </header>
+
+            <div class="w-full h-screen overflow-x-hidden  flex flex-col">
+                <main class="w-full flex-grow pl-6">
+                    <div class="flex top-5 pl-10 pt-10  justify-center items-center ">
+                        
+                        <svg class="mr-5   h-10 w-10 text-white text-center"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round">  <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />  <circle cx="8.5" cy="7" r="4" />  <line x1="20" y1="8" x2="20" y2="14" />  <line x1="23" y1="11" x2="17" y2="11" /></svg>
+
+  
+                        <h1 class="text-4xl text-white">Registro de Cliente </h1>
+                     </div>
+                    <div class="flex flex-wrap">
+                        <div class="w-full h-full">
+                            <p class="text-Text text-3xl pl-10">
+                                
+                            </p>
+
+
+                            <!-- ? Crear formularios Aqui de registro  -->
+                            
+                            <div class="mx-auto max-w-6x py-20 px-12 lg:px-24  mb-0">
+                                <form>
+                                    <div class="bg-fondoM shadow-md rounded px-8 pt-6 pb-8 mb-4 flex flex-col">
+                                        <div class="-mx-3 md:flex mb-6">
+                                            <div class="md:w-1/2 px-3 mb-6 md:mb-0">
+                                                <label class="flex uppercase tracking-wide text-Text text-xl font-bold mb-2" for="company">
+                                                    Nombre y Apellido*
+                                                </label>
+                                                <input class="mb-5 bg-gray-50 text-gray-900 text-sm rounded-lg focus:ring-fondo focus:border-fondo block w-full p-2.5" mb-3" id="company" type="text" placeholder="Tutsplus">
+                                            </div>
+                                            <div class="md:w-1/2 px-3">
+                                                <label class="flex uppercase tracking-wide text-Text text-xl font-bold mb-2" for="title">
+                                                    C.I*
+                                                </label>
+                                                <input class="mb-5 bg-white text-gray-900 text-sm rounded-lg focus:ring-fondo focus:border-fondo block w-full p-2.5" id="title" type="number" placeholder="Cedula">
+                                                </div>
+                                        </div>
+                                        <div class="-mx-3 md:flex mb-6">
+                                            <div class="md:w-full px-3">
+                                                <label class="flex uppercase tracking-wide text-Text text-xl font-bold mb-2" for="application-link">
+                                                    Direccion
+                                                </label>
+                                                <input class="mb-5 bg-gray-50 text-gray-900 text-sm rounded-lg focus:ring-fondo focus:border-fondo block w-full p-2.5" id="application-link" type="text" placeholder="...">
+                                            </div>
+                                        </div>
+                                        <div class="-mx-3 md:flex mt-2">
+                                            <div class="md:w-full px-3">
+                                                <button class="text-Text pl-10 pr-10 pt-2 pb-2 bg-boton rounded-lg">
+                                                    Guardar
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+
+                        <!-- ? Tabla registrados -->
+
+                            <div class="container mx-auto py-6 px-4" >
+                                <div class="flex top-5 pl-10 pt-10  justify-center items-center mb-8 ">
+                                    <svg class="mr-5   h-10 w-10 text-white text-center"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/>
+                                    </svg>
+
+                                    <h2 class=" text-4xl text-white">Clientes</h2>
+                                </div>
+		                        <div class="overflow-x-auto bg-white rounded-lg shadow overflow-y-auto relative" style="height: 405px;">
+			                        <table class="border-collapse table-auto w-full whitespace-no-wrap bg-white table-striped relative">
+				                        <thead>
+					                        <tr class="text-left">
+						                        <th class="py-2 px-3 sticky top-0 border-b border-gray-200 bg-gray-100">
+							                        <label
+								                        class="text-teal-500 inline-flex justify-between items-center hover:bg-gray-200 px-2 py-2 rounded-lg cursor-pointer">
+								                    <input type="checkbox" class="form-checkbox focus:outline-none focus:shadow-outline">
+							                        </label>
+						                        </th>
+						                    
+							                        <th class="bg-gray-100 sticky top-0 border-b border-gray-200 px-6 py-2 text-gray-600 font-bold tracking-wider uppercase text-xs hola">
+                                                     Id
+                                                    </th>
+							                        <th class="bg-gray-100 sticky top-0 border-b border-gray-200 px-6 py-2 text-gray-600 font-bold tracking-wider uppercase text-xs hola">
+                                                     Nombre
+                                                    </th>
+							                        <th class="bg-gray-100 sticky top-0 border-b border-gray-200 px-6 py-2 text-gray-600 font-bold tracking-wider uppercase text-xs hola">
+                                                     C.I
+                                                    </th>
+							                        <th class="bg-gray-100 sticky top-0 border-b border-gray-200 px-6 py-2 text-gray-600 font-bold tracking-wider uppercase text-xs hola">
+                                                     Direccion
+                                                    </th>
+						              
+					                        </tr>
+				                        </thead>
+				                        <tbody>
+					                        <template>
+						                        <tr>
+							                        <td class="border-dashed border-t border-gray-200 px-3">
+								                    <label
+									                    class="text-teal-500 inline-flex justify-between items-center hover:bg-gray-200 px-2 py-2 rounded-lg cursor-pointer">
+									                <input type="checkbox" class="form-checkbox rowCheckbox focus:outline-none focus:shadow-outline">
+								                    </label>
+							                        </td>
+							                        <td class="border-dashed border-t border-gray-200 userId">
+								                        <span class="text-gray-700 px-6 py-3 flex items-center"></span>
+							                        </td>
+							                        <td class="border-dashed border-t border-gray-200 firstName">
+								                        <span class="text-gray-700 px-6 py-3 flex items-center"></span>
+							                        </td>
+							                        <td class="border-dashed border-t border-gray-200 lastName">
+								                        <span class="text-gray-700 px-6 py-3 flex items-center"></span>
+							                        </td>
+							                        <td class="border-dashed border-t border-gray-200 emailAddress">
+								                        <span class="text-gray-700 px-6 py-3 flex items-center"></span>
+							                        </td>
+							                        <td class="border-dashed border-t border-gray-200 gender">
+								                        <span class="text-gray-700 px-6 py-3 flex items-center"></span>
+							                        </td>
+							                        <td class="border-dashed border-t border-gray-200 phoneNumber">
+								                        <span class="text-gray-700 px-6 py-3 flex items-center"></span>
+							                        </td>
+						                        </tr>
+					                        </template>
+				                        </tbody>
+			                        </table>
+		                        </div>  
+                            </div>  
+                        </div>
+                    </div>
+                </main>
+                <footer class="w-full relative bottom-0 bg-fondoM p-5">
+                    <div class="flex  h-full bg-orange-700"></div>
+                </footer>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+<!-- altocar 639 se va pa la mierda -->
+
+
+
+<!-- hacer focus es para la idea que tengo que quede sombreado al precioanr le boton -->
+<!-- focus:border-gray-300 focus:outline-none -->
