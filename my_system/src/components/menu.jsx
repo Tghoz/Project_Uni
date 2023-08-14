@@ -1,3 +1,5 @@
+import { HiMenuAlt1 } from "react-icons/hi";
+
 import Link from "next/link";
 import Modal from "./Modal";
 
@@ -15,9 +17,7 @@ export default function Menu({ className }) {
         <div className="flex mt-20 w-full h-20 justify-center  items-center">
           <p className="text-center text-3xl">ADMI</p>
         </div>
-        <div className="">
-          <Modal />
-        </div>
+
         <ul className="absolute mt-48">
           {link.map(({ name, route }) => (
             <li key={route}>
