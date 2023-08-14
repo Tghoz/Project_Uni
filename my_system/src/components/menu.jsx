@@ -1,30 +1,31 @@
-
-import { HiMenuAlt1 } from "react-icons/hi";
 import Link from "next/link";
+import Modal from "./Modal";
 
 const link = [
   {
-    label: "Home",
+    name: "Home",
     route: "/home ",
   },
 ];
 
-export default function Menu() {
-
+export default function Menu({ className }) {
   return (
-    <nav className=" bg-[#202020] min-h-screen w-72">
-        <div className="py-3 flex justify-end">
-          <HiMenuAlt1 size={50} className="cursor-pointer m-2" />
-      </div>
-      <div>
-        <ul>
-          {link.map(({ label, route }) => (
-            <li key={route}>
-              <Link href={route}>{label}</Link>
-            </li>
-            ))}
-          </ul>
+    <nav className={`${className}`}>
+      <div className="flex h-[90vh] w-72 bg-[#202020] m-10 rounded-3xl">
+        <div className="flex mt-20 w-full h-20 justify-center  items-center">
+          <p className="text-center text-3xl">ADMI</p>
         </div>
+        <div className="">
+          <Modal />
+        </div>
+        <ul className="absolute mt-48">
+          {link.map(({ name, route }) => (
+            <li key={route}>
+              <Link href={route}>{name}</Link>
+            </li>
+          ))}
+        </ul>
+      </div>
     </nav>
-  )
+  );
 }
