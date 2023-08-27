@@ -1,9 +1,13 @@
+"use client";
 import { AiOutlineShop } from "react-icons/ai";
 import { PiFolderUserFill } from "react-icons/pi";
 import { AiOutlineFolderOpen } from "react-icons/ai";
+import { useState } from "react";
 
 import Link from "next/link";
-import Modal from "./Modal";
+
+import Boton from "./Boton";
+import { Modal } from "./Modal";
 
 const link = [
   {
@@ -13,17 +17,19 @@ const link = [
   },
   {
     name: "clientes",
-    route: "/registro_cliente",
+    route: "/clientes",
     icon: <PiFolderUserFill size={26} className="cursor-pointer" />,
   },
   {
     name: "facturas",
-    route: "/registro_facturas",
+    route: "/facturas",
     icon: <AiOutlineFolderOpen size={26} className="cursor-pointer" />,
   },
 ];
 
 export default function Menu({ className }) {
+  const [modal_Open, setModal_Open] = useState(false);
+  
   return (
     <nav className={`${className}`}>
       <div className="flex h-[90vh] w-64 bg-[#202020] m-10 rounded-3xl">
@@ -32,8 +38,14 @@ export default function Menu({ className }) {
         </div>
 
         <div className="absolute mt-40 w-64 h-20 ">
-          <Modal />
+          <Boton
+            close={modal_Open}
+            onClick={() => setModal_Open(true)}
+          >
+            + Nueva factura
+          </Boton>
         </div>
+        {modal_Open  && <Modal  setModal_Open={setModal_Open} />}
 
         <ul className="absolute mt-60">
           {link.map(({ name, route, icon }) => (

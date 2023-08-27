@@ -12,5 +12,5 @@ export default function RootLayout({ children }) {
       </div>
       <div className="ml-80 w-full">{children}</div>
     </div>
-  )
+  );
 }
