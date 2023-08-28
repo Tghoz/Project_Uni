@@ -16,43 +16,43 @@ export default function Factura() {
       <div className=" mx-14   ">
         <div className=" absolute w-80 justify-start  bg-[#191919]  rounded-lg   pt-5 pb-5 ">
           <form action="">
-            <div class="px-5 pb-5">
+            <div className="px-5 pb-5">
               <input
                 placeholder="Cedula "
-                class="text-black placeholder-gray-600 w-full px-4 py-2.5 mt-2 text-base border-transparent rounded-lg"
+                className ="text-black placeholder-gray-600 w-full px-4 py-2.5 mt-2 text-base border-transparent rounded-lg"
               />
               <input
                 placeholder="Nombre y Apellido"
-                class="text-black placeholder-gray-600 w-full px-4 py-2.5 mt-2 text-base border-transparent rounded-lg"
+                className="text-black placeholder-gray-600 w-full px-4 py-2.5 mt-2 text-base border-transparent rounded-lg"
               />
               <input
                 placeholder="Correo"
-                class="text-black placeholder-gray-600 w-full px-4 py-2.5 mt-2 text-base rounded-lg"
+                className="text-black placeholder-gray-600 w-full px-4 py-2.5 mt-2 text-base rounded-lg"
               />
               <input
                 placeholder="Direccion"
-                class="text-black placeholder-gray-600 w-full px-4 py-2.5 mt-2 text-base rounded-lg"
+                className="text-black placeholder-gray-600 w-full px-4 py-2.5 mt-2 text-base rounded-lg"
               />
               <input
                 placeholder="Fecha"
                 type="date"
-                class="text-black placeholder-gray-600 w-full px-4 py-2.5 mt-2 text-base rounded-lg"
+                className="text-black placeholder-gray-600 w-full px-4 py-2.5 mt-2 text-base rounded-lg"
               />
-              <div class="flex">
-                <div class="flex-grow w-1/4 pr-2">
+              <div className="flex">
+                <div className="flex-grow w-1/4 pr-2">
                   <select
                     placeholder="CODE"
-                    class="text-black placeholder-gray-600 w-full px-0 py-2.5 mt-2 text-base rounded-lg "
+                    className="text-black placeholder-gray-600 w-full px-0 py-2.5 mt-2 text-base rounded-lg "
                   >
                     <option value="1">0412</option>
                     <option value="2">0414</option>
                     <option value="3">0424</option>
                   </select>
                 </div>
-                <div class="flex-grow">
+                <div className="flex-grow">
                   <input
                     placeholder="Numero Telefonico"
-                    class="text-black placeholder-gray-600 w-full px-4 py-2.5 mt-2 text-base rounded-lg "
+                    className="text-black placeholder-gray-600 w-full px-4 py-2.5 mt-2 text-base rounded-lg "
                   />
                 </div>
               </div>
@@ -63,20 +63,20 @@ export default function Factura() {
             <div className="flex-initial">
               <button
                 type="button"
-                class="flex items-center px-5 py-2.5 font-medium tracking-wide text-white capitalize bg-[#202020] rounded-md hover:bg-blue-950 focus:outline-none focus:bg-blue-950 transition duration-300 transform active:scale-95 ease-in-out"
+                className="flex items-center px-5 py-2.5 font-medium tracking-wide text-white capitalize bg-[#202020] rounded-md hover:bg-blue-950 focus:outline-none focus:bg-blue-950 transition duration-300 transform active:scale-95 ease-in-out"
               >
                 <BsSave />
-                <span class="pl-2 mx-1">Save</span>
+                <span className="pl-2 mx-1">Save</span>
               </button>
             </div>
 
             <div className="flex-initial">
               <button
                 type="button"
-                class="flex items-center px-5 py-2.5 font-medium tracking-wide text-white capitalize  bg-[#202020] rounded-md hover:bg-red-200 hover:fill-current hover:text-red-600 focus:outline-none transition duration-300 transform active:scale-95 ease-in-out"
+                className="flex items-center px-5 py-2.5 font-medium tracking-wide text-white capitalize  bg-[#202020] rounded-md hover:bg-red-200 hover:fill-current hover:text-red-600 focus:outline-none transition duration-300 transform active:scale-95 ease-in-out"
               >
                 <AiFillDelete size={20} />
-                <span class="pl-2 mx-1">Delete</span>
+                <span className="pl-2 mx-1">Delete</span>
               </button>
             </div>
           </div>
@@ -84,48 +84,48 @@ export default function Factura() {
       </div>
 
       <div className=" flex justify-end">
-        <div class="mx-3 flex w-2/3 ">
+        <div className="mx-3 flex w-2/3 ">
           {/* <label
-                class="flex  tracking-wide text-xl mb-2"
+                className="flex  tracking-wide text-xl mb-2"
               >
                 Productos
               </label> */}
-          <table class="border-collapse table-auto w-full   whitespace-no-wrap bg-white table-striped relative  rounded-lg">
+          <table className="border-collapse table-auto w-full   whitespace-no-wrap bg-white table-striped relative  rounded-lg">
             <thead>
-              <tr class="text-left rounded-lg  ">
-                <th class="bg-gray-100 sticky top-0 border-b border-gray-200 px-6 py-2 text-gray-600 font-bold tracking-wider uppercase text-xs hola">
+              <tr className="text-left rounded-lg  ">
+                <th className="bg-gray-100 sticky top-0 border-b border-gray-200 px-6 py-2 text-gray-600 font-bold tracking-wider uppercase text-xs hola">
                   Codigo
                 </th>
-                <th class="bg-gray-100 sticky top-0 border-b border-gray-200 px-6 py-2 text-gray-600 font-bold tracking-wider uppercase text-xs hola">
+                <th className="bg-gray-100 sticky top-0 border-b border-gray-200 px-6 py-2 text-gray-600 font-bold tracking-wider uppercase text-xs hola">
                   Nombre
                 </th>
-                <th class="bg-gray-100 sticky top-0 border-b border-gray-200 px-6 py-2 text-gray-600 font-bold tracking-wider uppercase text-xs hola">
+                <th className="bg-gray-100 sticky top-0 border-b border-gray-200 px-6 py-2 text-gray-600 font-bold tracking-wider uppercase text-xs hola">
                   Cantidad
                 </th>
-                <th class="bg-gray-100 sticky top-0 border-b border-gray-200 px-6 py-2 text-gray-600 font-bold tracking-wider uppercase text-xs hola">
+                <th className="bg-gray-100 sticky top-0 border-b border-gray-200 px-6 py-2 text-gray-600 font-bold tracking-wider uppercase text-xs hola">
                   Precio
                 </th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td class="border-dashed border-t border-gray-200 userId">
-                  <span class="text-gray-700 px-6 py-3 flex items-center">
+                <td className="border-dashed border-t border-gray-200 userId">
+                  <span className="text-gray-700 px-6 py-3 flex items-center">
                     1234567
                   </span>
                 </td>
-                <td class="border-dashed border-t border-gray-200 firstName">
-                  <span class="text-gray-700 px-6 py-3 flex items-center">
+                <td className="border-dashed border-t border-gray-200 firstName">
+                  <span className="text-gray-700 px-6 py-3 flex items-center">
                     Oreo
                   </span>
                 </td>
-                <td class="border-dashed border-t border-gray-200 lastName">
-                  <span class="text-gray-700 px-6 py-3 flex items-center">
+                <td className="border-dashed border-t border-gray-200 lastName">
+                  <span className="text-gray-700 px-6 py-3 flex items-center">
                     (2) x 1.4
                   </span>
                 </td>
-                <td class="border-dashed border-t border-gray-200 emailAddress">
-                  <span class="text-gray-700 px-6 py-3 flex items-center">
+                <td className="border-dashed border-t border-gray-200 emailAddress">
+                  <span className="text-gray-700 px-6 py-3 flex items-center">
                     2.8
                   </span>
                 </td>

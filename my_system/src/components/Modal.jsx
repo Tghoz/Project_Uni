@@ -7,7 +7,7 @@ export function Modal({ setModal_Open }) {
   return (
     <>
       <div
-        className="absolute p-20 top-0 left-0 w-[200vh] h-full backdrop-blur-xl z-10 transition-all duration-500  "
+        className="absolute p-20 top-0 left-0 w-[200vh] h-full backdrop-blur-xl z-50 transition-all duration-500  "
       >
         <div className=" container w-[185vh]  h-[80vh] rounded-3xl bg-[#252525] py-6 px-4 ">
           <div className="">
