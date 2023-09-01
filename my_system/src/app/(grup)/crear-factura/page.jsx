@@ -116,7 +116,19 @@ function Facturas() {
         </form>
       </div>
 
-      <div className="py-6 md:py-0 md:px-6"></div>
+      <div className="py-6 md:py-0 md:px-6">
+        <ul>
+          <li>
+            ola
+          </li>
+        </ul>
+
+
+
+
+
+
+      </div>
     </div>
   );
 }

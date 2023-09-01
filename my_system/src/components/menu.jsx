@@ -33,7 +33,7 @@ export default function Menu({ className }) {
           className="fixed mt-48 ml-10  w-44 h-11  bg-black  font-semibold py-2  rounded-br-lg rounded-bl-lg rounded-tr-lg   hover:bg-[#181818]"
           href={"crear-factura"}
         >
-          <span className="p-7">+ Nueva factura</span>
+          <span className="flex justify-center ">+ Nueva Factura</span>
         </Link>
         <ul className="absolute mt-60">
           {link.map(({ name, route, icon }) => (
