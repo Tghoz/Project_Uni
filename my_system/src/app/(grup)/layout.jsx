@@ -10,7 +10,7 @@ export default function RootLayout({ children }) {
       <div className="relative">
         <Menu className="fixed" />
       </div>
-      <div className="ml-80 w-full">{children}</div>
+      <div className="ml-80 w-full  p-10  ">{children}</div>
     </div>
   );
 }
