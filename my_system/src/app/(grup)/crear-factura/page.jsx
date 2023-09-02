@@ -117,18 +117,10 @@ function Facturas() {
       </div>
 
       <div className="py-6 md:py-0 md:px-6">
-        <ul>
-          <li>
-            ola
-          </li>
-        </ul>
-
-
-
-
-
-
+      lista de procuctos seleccionados para realizar la factura 
       </div>
+      
+
     </div>
   );
 }

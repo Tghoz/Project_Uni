@@ -1,21 +1,14 @@
-import Card from "@/components/Cart";
-import {getGames} from '@/utils/db'
-
-
+import Card from "@/components/Card";
+import { getGames } from "@/fetch/db";
 
 export default async function Page() {
-
-  const games = await getGames()
+  const games = await getGames();
 
   return (
-    <div className="grid  grid-cols-1 sm:grid-cols-3 gap-5">
-      {games.length && games.map(game => (
-        <Card
-          game={game}
-        />
-      ))} 
+    <div className="grid  grid-cols-3 gap-6">
+      {games.length && games.map((game) => <Card game={game} />)}
     </div>
   );
 }
 
-// como declarar un context en react!
+// como declarar un context en react! 
