@@ -14,8 +14,8 @@ function noHome() {
   const router = useRouter();
 
   const entrar = () => {
-    if (email.trim() === "govannytgoz@gmail.com") {
-      //<--- aqui va una consulta a la base de datos jiji
+    if (email.trim() === "govannytgoz@gmail.com") {//<--- aqui va una consulta a la base de datos jiji
+
       router.push("/productos");
     } else if (email.trim() === "") {
       setError("Por favor ingresar un Correo electronico");
