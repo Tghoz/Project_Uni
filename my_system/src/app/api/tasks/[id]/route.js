@@ -1,10 +1,11 @@
+//! importacion de la ni idea juasjuas 
 import { NextResponse } from "next/server";
 
 
 //? Leer
 export function GET(reques, { params }) {
     return NextResponse.json({
-        ms:`tarea obtenida ... ${params.id} `,
+        ms: `tarea obtenida ... ${params.id} `,
     });
 };
 
@@ -16,7 +17,7 @@ export function DELETE(reques, { params }) {
 }
 
 //?  Actualizar
-export function PUT(reques, {params}) {
+export function PUT(reques, { params }) {
     return NextResponse.json({
         ms: `tarea actualizada ... ${params.id}`
     })

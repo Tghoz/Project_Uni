@@ -1,8 +1,20 @@
 import { NextResponse } from "next/server";
 
-export function GET() {
+import { client } from "@/app/lib/pg";
 
-    return NextResponse.json({
-        ms: "hola mundo api en next",
-    });
-}
+/**
+ * 
+ * @param {NextResponse} request 
+ */
+
+
+export async function GET() {
+
+    const data = await client.query("SELECT * FROM usuario;")
+    const { rows, rowCount } = data
+    if (rowCount > 0) {
+        return Response.json({
+            ms: rows,
+        });
+    };
+};
