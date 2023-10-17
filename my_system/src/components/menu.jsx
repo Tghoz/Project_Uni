@@ -20,6 +20,7 @@ const link = [
     route: "/facturas",
     icon: <AiOutlineFolderOpen size={26} className="cursor-pointer" />,
   },
+
 ];
 
 export default function Menu({ className }) {
@@ -33,12 +34,21 @@ export default function Menu({ className }) {
           className="fixed mt-48 ml-10  w-44 h-11  bg-black  font-semibold py-2  rounded-br-lg rounded-bl-lg rounded-tr-lg   hover:bg-[#181818]"
           href={"crear-factura"}
         >
-          <span className="flex justify-center ">+ Nueva Factura</span>
+          <span className="flex justify-center ">+ Factura</span>
         </Link>
-        <ul className="absolute mt-60">
+
+        <Link
+          className="fixed mt-64 ml-10  w-44 h-11  bg-black font-semibold py-2  rounded-br-lg rounded-bl-lg rounded-tr-lg   hover:bg-[#181818]"
+          href={"masProductos"}
+        >
+          <span className="flex justify-center ">+ Productos</span>
+        </Link>
+
+        
+        <ul className="absolute mt-80">
           {link.map(({ name, route, icon }) => (
             <li
-              className=" m-10  capitalize   text-left text-xl hover:underline decoration-double "
+              className=" m-10  capitalize  text-left text-xl hover:underline decoration-double "
               key={route}
             >
               <Link

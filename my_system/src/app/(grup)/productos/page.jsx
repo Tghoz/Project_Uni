@@ -4,7 +4,6 @@ import { getGames } from "../../../../service/fetch";
 export default async function Page() {
   const games = await getGames();
 
-        console.log(games)
 
   return (
     <div className="grid  grid-cols-3 gap-6">
