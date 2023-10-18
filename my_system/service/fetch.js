@@ -1,8 +1,7 @@
 
-
 export async function fetch( {url , method= 'GET' ,body = null }){
     const options = {
-        body,
+        body : body ? JSON.stringify(body) : body,
         method,
         headers : { 'Content-Type' : 'application/json'},
     };

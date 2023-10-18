@@ -1,7 +1,36 @@
-export default function ola() {
+'use client'
+import { useState } from "react";
+import { fetch } from "../../../../service/fetch";
+
+
+
+export default function addProcucto() {
+  const [value , setValue] = useState('');
+
+  const changeValue = (e) => setValue(e.target.value);
+  
+  const saveProducto =  (e) => {
+    e.preventDefault();
+    (async () => {
+      const res = await fetch({
+        url: 'http://localhost:3000/api/ping',
+        method : 'POST',
+        body : {producto: value },
+      })
+      if (res) {
+        console.log('sisa')
+      }else(
+        console.log('nolsa')
+      )
+    })()
+  }
+
+
+
   return (
     <div className="flex justify-center ">
       <form
+        onSubmit={saveProducto}
         className="w-full md:w-1/2 rounded-3xl p-6 bg-[#212121]"
       >
         <h2 className="text-2xl pb-3 font-semibold">Agregar Nuevo Juego</h2>
@@ -9,22 +38,51 @@ export default function ola() {
           <div className="flex flex-col mb-3">
             <input
                 type="text"
+                onChange={changeValue}
                 placeholder="Nombre"
                 required
                 className="pt-3 pb-2 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-200"
               
             />
           </div>
-          <div className="flex flex-col mb-3">
-           
+        </div>
+        <div className="w-full pt-3">
+          <button
+            className="w-full px-6 py-3 mt-3 text-lg text-white transition-all duration-150 ease-linear rounded-lg shadow outline-none bg-black hover:bg-[#181818] hover:shadow-lg focus:outline-none"
+          >
+            Guardar
+          </button>
+        </div>
+      </form>
+    </div>
+  );
+
+
+
+
+
+
+
+
+
+/*
+
+
+
+      <div className="flex flex-col mb-3"> 
             <input
                 type="text"
                 placeholder="Precio"
+                onChange={changeValue}
                 required
                 className="pt-3 pb-2 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-200"
             />
           </div>
-          <div className="flex flex-col mb-3">
+
+
+
+
+  <div className="flex flex-col mb-3">
             
                 <label className="block text-sm font-medium text-white">Image</label>
                 <div className="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
@@ -63,16 +121,9 @@ export default function ola() {
                 </div>
 
           </div>
-        </div>
-        <div className="w-full pt-3">
-          <button
-            type="submit"
-            className="w-full px-6 py-3 mt-3 text-lg text-white transition-all duration-150 ease-linear rounded-lg shadow outline-none bg-black hover:bg-[#181818] hover:shadow-lg focus:outline-none"
-          >
-            Guardar
-          </button>
-        </div>
-      </form>
-    </div>
-  );
+
+*/ 
+
+
+  
 }
