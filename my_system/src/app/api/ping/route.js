@@ -19,7 +19,7 @@ export async function POST(request){
         'INSERT INTO producto(nombre) VALUES($1) RETURNING *;',
         [producto]
     );
-    if ( inserted.rowCount) return new Response.json(inserted.rows[0]);
+    if ( inserted.rowCount) return  Response.json(inserted.rows[0]);
     return Response.json(
         {error: ' nolsa'}, 
         {status : 500}
