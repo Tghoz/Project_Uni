@@ -1,21 +1,30 @@
 'use client'
 import { useState } from "react";
 import { fetch } from "../../../../service/fetch";
+import { useForm } from "react-hook-form"
+
+import { uploadFile } from "../../../../firebase/config";
 
 
 
 export default function addProcucto() {
-  const [value, setValue] = useState('');
 
-  const changeValue = (e) => setValue(e.target.value);
+  const [img, setImg] = useState('')
+
+
+  const changeImg = (e) => setImg(uploadFile(e.target.files[0]))
+
+
+  const { register, handleSubmit } = useForm()
+
 
   const saveProducto = (e) => {
-    e.preventDefault();
+    //e.preventDefault();
     (async () => {
       const res = await fetch({
         url: 'http://localhost:3000/api/ping',
         method: 'POST',
-        body: { producto: value },
+        body: { e, img },
       })
       if (res) {
         console.log('sisa')
@@ -25,31 +34,32 @@ export default function addProcucto() {
     })()
   }
 
-
+  console.log()
 
   return (
     <div className="flex justify-center ">
       <form
-        onSubmit={saveProducto}
+        onSubmit={handleSubmit(saveProducto)}
         className="w-full md:w-1/2 rounded-3xl p-6 bg-[#212121]"
       >
         <h2 className="text-2xl pb-3 font-semibold">Agregar Nuevo Juego</h2>
         <div>
           <div className="flex flex-col mb-3">
             <input
+              {...register("nombre")}
+              name="nombre"
               type="text"
-              onChange={changeValue}
               placeholder="Nombre"
-              required
               className="pt-3 pb-2 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-200"
 
             />
           </div>
           <div className="flex flex-col mb-3">
             <input
-              type="text"
+              name="precio"
+              type="number"
+              {...register("precio")}
               placeholder="Precio"
-              onChange={changeValue}
               required
               className="pt-3 pb-2 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-200"
             />
@@ -87,7 +97,7 @@ export default function addProcucto() {
                       id="file-upload"
                       name="file-upload"
                       type="file"
-                      onChange={e => console.log(e.target.files)}
+                      onChange={changeImg}
                       className="sr-only"
                     />
                   </label>

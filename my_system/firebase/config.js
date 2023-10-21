@@ -25,8 +25,8 @@ const analytics = getAnalytics(app);
 
 const storage = getStorage(app);
 
-export function uploadFile (file){
-    const storageRef =ref(storage);
+export function uploadFile(file) {
+    const storageRef = ref(storage, 'ola');
     uploadBytes(storageRef, file).then(
         snapshot => {
             console.log(snapshot)
