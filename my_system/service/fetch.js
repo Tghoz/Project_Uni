@@ -1,5 +1,5 @@
 
-export async function fetch( {url , method= 'GET' ,body = null }){
+export async function fetch( {url , method= 'GET' ,body = null}){
     const options = {
         body : body ? JSON.stringify(body) : body,
         method,

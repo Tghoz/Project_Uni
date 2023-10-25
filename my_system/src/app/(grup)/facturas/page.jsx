@@ -22,7 +22,7 @@ export default function page() {
                 Cliente
               </th>
               <th className="px-6 py-3 border-b-2 border-gray-300 text-left text-sm leading-4  tracking-wider">
-                Nombre
+                Total
               </th>
               <th className="px-6 py-3 border-b-2 border-gray-300 text-left text-sm leading-4  tracking-wider">
                 Fecha Facturada
@@ -45,7 +45,7 @@ export default function page() {
                 </div>
               </td>
               <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-500">
-                <div className="text-sm leading-5 "> Yovanny Travieso</div>
+                <div className="text-sm leading-5 "> 25.00</div>
               </td>
               <td className="px-6 py-4 whitespace-no-wrap border-b  border-gray-500 text-sm leading-5">
                 02/09/2023

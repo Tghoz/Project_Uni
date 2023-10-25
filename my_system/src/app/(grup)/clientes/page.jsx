@@ -1,7 +1,27 @@
-import React from "react";
+"use client";
+import { useEffect, useState } from "react";
+import { fetch } from "../../../../service/fetch";
 
-export default function page() {
+
+export default function Cliente() {
+
+  const [cliente, setcliente] = useState([]);
+
+  useEffect(() => {
+    (async () => {
+      const res = await fetch({ url: "http://localhost:3000/api/cliente" });
+      if (res) setcliente(res);
+    })();
+  }, []);
+
+
+
+
+
+
+
   return (
+
     <div className="-my-2 py-2 overflow-x-auto sm:-mx-6 sm:px-6 lg:-mx-8 pr-10 lg:px-8">
       <div className="align-middle rounded-tl-lg rounded-tr-lg inline-block w-full py-4  px-12">
         <div className="flex justify-between">
@@ -19,53 +39,51 @@ export default function page() {
           <thead>
             <tr>
               <th className="px-6 py-3 border-b-2 border-gray-300 text-left leading-4  tracking-wider">
-                Cedula
+                <div className="text-sm leading-5 ">Cedula</div>
               </th>
               <th className="px-6 py-3 border-b-2 border-gray-300 text-left text-sm leading-4  tracking-wider">
-                Nombre 
+                <div className="text-sm leading-5 ">Nombre</div> 
               </th>
               <th className="px-6 py-3 border-b-2 border-gray-300 text-left text-sm leading-4  tracking-wider">
-                Email
+                <div className="text-sm leading-5 ">Email</div>
               </th>
               <th className="px-6 py-3 border-b-2 border-gray-300 text-left text-sm leading-4  tracking-wider">
-                Telefono
-              </th>
-              <th className="px-6 py-3 border-b-2 border-gray-300 text-left text-sm leading-4  tracking-wider">
-                Direccion
-              </th>
-              <th className="px-6 py-3 border-b-2 border-gray-300 text-left text-sm leading-4  tracking-wider">
-                Dia Agregado
+                <div className="text-sm leading-5 ">Telefono</div>
               </th>
             </tr>
           </thead>
           <tbody className="bg-[#202020]">
-            <tr>
-              <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-500">
-                <div className="flex items-center">
-                  <div>
-                    <div className="text-sm leading-5 ">27797609</div>
-                  </div>
-                </div>
-              </td>
-              <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-500">
-                <div className="text-sm leading-5 "> Yovanny Travieso</div>
-              </td>
-              <td className="px-6 py-4 whitespace-no-wrap border-b  border-gray-500 text-sm leading-5">
-                govannytgoz@gmail.com
-              </td>
-              <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-500 text-sm leading-5">
-                04122288105
-              </td>
-              <td className="px-6 py-4 whitespace-no-wrap border-b  border-gray-500 text-sm leading-5">
-                  <span className="relative text-xs">caricuao</span>
-              </td>
-              <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-500 -900 text-sm leading-5">
-                septiembre 2023
-              </td>
-            </tr>
+          <>
+            {!cliente.length ? (
+            <>
+                no hay jajas
+            </>
+              ) : (   
+            <>    
+            {cliente.map(({ id_cedula, nombre, email, telefono }) =>(
+              <tr>
+                <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-500">
+                  <div className="text-sm leading-5 ">{id_cedula}</div>
+                </td>
+                <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-500">
+                  <div className="text-sm leading-5 "> {nombre}</div>
+                </td>
+                <td className="px-6 py-4 whitespace-no-wrap border-b  border-gray-500 text-sm leading-5">
+                  <div className="text-sm leading-5 ">{email}</div>
+                </td>
+                <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-500 text-sm leading-5">
+                  <div className="text-sm leading-5 ">{telefono}</div>
+                </td>
+              </tr>
+                ))}
+            </>
+              )}
+          </>
           </tbody>
         </table>
       </div>
     </div>
+
+    
   );
 }

@@ -1,40 +1,29 @@
 'use client'
-import { useState } from "react";
+
 import { fetch } from "../../../../service/fetch";
 import { useForm } from "react-hook-form"
-
-import { uploadFile } from "../../../../firebase/config";
 
 
 
 export default function addProcucto() {
 
-  const [img, setImg] = useState('')
-
-
-  const changeImg = (e) => setImg(uploadFile(e.target.files[0]))
-
-
-  const { register, handleSubmit } = useForm()
-
+  const { register, handleSubmit } = useForm();
 
   const saveProducto = (e) => {
-    //e.preventDefault();
+
     (async () => {
       const res = await fetch({
         url: 'http://localhost:3000/api/ping',
         method: 'POST',
-        body: { e, img },
-      })
+        body:  e,
+      });
+
       if (res) {
-        console.log('sisa')
-      } else (
-        console.log('nolsa')
-      )
+        location.replace('http://localhost:3000/productos')
+      } 
     })()
   }
 
-  console.log()
 
   return (
     <div className="flex justify-center ">
@@ -97,7 +86,7 @@ export default function addProcucto() {
                       id="file-upload"
                       name="file-upload"
                       type="file"
-                      onChange={changeImg}
+               
                       className="sr-only"
                     />
                   </label>
@@ -122,19 +111,6 @@ export default function addProcucto() {
 
 
 
-
-
-
-
-
-
-  /*
-  
-  
-  
-   
-  
-  */
 
 
 
