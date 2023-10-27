@@ -7,7 +7,7 @@ export async function GET( ) {
     if (rowCount > 0) {
         return Response.json(rows);
     } else {
-        return  Response('', { status: 404 });
+        return new Response('', { status: 404 });
     };
 };
 
