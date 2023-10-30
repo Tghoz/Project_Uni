@@ -21,7 +21,7 @@ export async function POST(request) {
         'INSERT INTO cliente(id_cedula, nombre, email, telefono) VALUES($1, $2, $3, $4 ) RETURNING *;',
         [id_cedula, nombre, email, telefono]
     );
-    console.log(inserted)
+
     if (inserted.rowCount) return Response.json(inserted.rows[0]);
     return Response.json(
         { error: ' nolsa' },

@@ -7,8 +7,10 @@ import axios from "axios";
 export default function addProcucto() {
   const [producto, setProducto] = useState({
     nombre: "",
-    precio: 0,
+    precio: "",
   });
+
+  const [file,setFile] = useState(null);
 
   const handleChange = (e) => {
     setProducto({
@@ -21,14 +23,22 @@ export default function addProcucto() {
     e.preventDefault();
 
     if (!params.id) {
-      const res = await axios.post("/api/ping", producto);
-      console.log(res);
-      if (res.status === 200) {
-        
-      }
+
+      const formData = new FormData();
+      formData.append('nombre', producto.nombre)
+      formData.append('precio', producto.precio)
+
+      if (file) formData.append('img', file)
+
+      const res = await axios.post("/api/ping", formData,{
+        headers:{
+        'Content-Type' : 'multipart/form-data'
+        }
+      });
+    
+  
     }else{
       const res = await axios.put('/api/ping/'+params.id,producto)
-      console.log(res)
     }
 
     location.replace("http://localhost:3000/productos");
@@ -39,7 +49,7 @@ export default function addProcucto() {
   useEffect(() => {
     if (params.id) {
       axios.get("/api/ping/" + params.id).then((res) => {
-        console.log(res);
+
         setProducto({
           nombre: res.data[0].nombre,
           precio: res.data[0].precio,
@@ -51,6 +61,7 @@ export default function addProcucto() {
   return (
     <div className="flex justify-center ">
       <form
+
         onSubmit={handleSutmit}
         className="w-full md:w-1/2 rounded-3xl p-6 bg-[#212121]"
       >
@@ -78,10 +89,15 @@ export default function addProcucto() {
             />
           </div>
 
-          <div className="flex flex-col mb-3">
+          <div className="flex flex-col mb-3 object-contain mx-auto">
             <label className="block text-sm font-medium text-white">
               Image
             </label>
+
+            {file ?  file && <img src={URL.createObjectURL(file)} alt="" /> 
+            : 
+            
+            ( 
             <div className="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
               <div className="space-y-1 text-center">
                 <svg
@@ -99,6 +115,7 @@ export default function addProcucto() {
                   />
                 </svg>
                 <div className="flex text-sm text-gray-600">
+
                   <label
                     htmlFor="file-upload"
                     className="relative cursor-pointer bg-white rounded-md font-medium text-indigo-600 hover:text-indigo-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500"
@@ -109,13 +126,18 @@ export default function addProcucto() {
                       name="file-upload"
                       type="file"
                       className="sr-only"
+                      onChange={(e) => {
+                        setFile(e.target.files[0])
+                      }}
                     />
+                    
                   </label>
                   <p className="pl-1 text-white">or drag and drop</p>
                 </div>
                 <p className="text-xs text-white">PNG, JPG, GIF up to 10MB</p>
               </div>
             </div>
+            ) }
           </div>
         </div>
         <div className="w-full pt-3">
@@ -124,6 +146,7 @@ export default function addProcucto() {
           </button>
         </div>
       </form>
+     
     </div>
   );
 }

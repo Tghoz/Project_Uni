@@ -13,7 +13,6 @@ import Card from "@/components/Card";
   }
   async function productoPage() {
     const productos = await cargarProductos();
-    console.log( '==', productos)
     return <div className="grid  grid-cols-3 gap-6">
           {productos.map(producto => (
             <Card  producto={producto} key={producto.id_producto}/>
