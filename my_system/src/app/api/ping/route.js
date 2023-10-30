@@ -1,6 +1,6 @@
 import { client } from '@/lib/pg';
 import { NextResponse } from 'next/server';
-import{ writeFile} from 'fs/promises';
+import{ writeFile , unlink} from 'fs/promises';
 import path from 'path';
 import { v4 as uuidv4 } from 'uuid';
 import {v2 as cloudinary} from 'cloudinary';
@@ -37,6 +37,11 @@ export async function POST(request) {
     
     const res = await cloudinary.uploader.upload(filePath)
     console.log(res)
+
+    if(res) {
+        await unlink(filePath);
+    }
+
 
     const inserted = await client.query(
          'INSERT INTO producto(nombre, precio, img) VALUES($1 , $2, $3) RETURNING *;',
