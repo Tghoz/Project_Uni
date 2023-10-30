@@ -1,13 +1,15 @@
 import { client } from '@/lib/pg'
+import { NextResponse } from 'next/server';
 
 
-export async function GET( ) {
+
+export async function GET() {
     const data = await client.query("SELECT * FROM producto;");
     const { rows, rowCount } = data;
     if (rowCount > 0) {
-        return Response.json(rows);
+        return NextResponse.json(rows);
     } else {
-        return new Response('', { status: 404 });
+        return new NextResponse('', { status: 404 });
     };
 };
 
@@ -15,16 +17,25 @@ export async function GET( ) {
 
 export async function POST(request) {
     const body = await request.json();
-    const { nombre, precio } = body;
+    const {id_producto,nombre, precio, img } = body;
 
     const inserted = await client.query(
-        'INSERT INTO producto(nombre, precio) VALUES($1 , $2) RETURNING *;',
-        [nombre, precio]
+        'INSERT INTO producto(nombre, precio, img) VALUES($1 , $2, $3) RETURNING *;',
+        [nombre, precio, img]
     );
     console.log(inserted)
-    if (inserted.rowCount) return Response.json(inserted.rows[0]);
-    return Response.json(
-        { error: ' nolsa' },
-        { status: 500 }
-    );
+    if (inserted.rowCount) {
+        return NextResponse.json({
+            nombre,
+            precio,
+            img,
+            id_producto
+        });
+    } else {
+
+        return NextResponse.json(
+            { error: ' nolsa' },
+            { status: 500 }
+        );
+    }
 }

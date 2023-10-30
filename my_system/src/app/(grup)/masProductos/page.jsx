@@ -1,65 +1,87 @@
-'use client'
+"use client";
 
-import { fetch } from "../../../../service/fetch";
-import { useForm } from "react-hook-form"
-
-
+import { useParams } from "next/navigation";
+import { useState, useEffect } from "react";
+import axios from "axios";
 
 export default function addProcucto() {
+  const [producto, setProducto] = useState({
+    nombre: "",
+    precio: 0,
+  });
 
-  const { register, handleSubmit } = useForm();
+  const handleChange = (e) => {
+    setProducto({
+      ...producto,
+      [e.target.name]: e.target.value,
+    });
+  };
 
-  const saveProducto = (e) => {
+  const handleSutmit = async (e) => {
+    e.preventDefault();
 
-    (async () => {
-      const res = await fetch({
-        url: 'http://localhost:3000/api/ping',
-        method: 'POST',
-        body:  e,
+    if (!params.id) {
+      const res = await axios.post("/api/ping", producto);
+      console.log(res);
+      if (res.status === 200) {
+        
+      }
+    }else{
+      const res = await axios.put('/api/ping/'+params.id,producto)
+      console.log(res)
+    }
+
+    location.replace("http://localhost:3000/productos");
+  };
+
+  const params = useParams();
+
+  useEffect(() => {
+    if (params.id) {
+      axios.get("/api/ping/" + params.id).then((res) => {
+        console.log(res);
+        setProducto({
+          nombre: res.data[0].nombre,
+          precio: res.data[0].precio,
+        });
       });
-
-      if (res) {
-        location.replace('http://localhost:3000/productos')
-      } 
-    })()
-  }
-
+    }
+  }, []);
 
   return (
     <div className="flex justify-center ">
       <form
-        onSubmit={handleSubmit(saveProducto)}
+        onSubmit={handleSutmit}
         className="w-full md:w-1/2 rounded-3xl p-6 bg-[#212121]"
       >
         <h2 className="text-2xl pb-3 font-semibold">Agregar Nuevo Juego</h2>
         <div>
           <div className="flex flex-col mb-3">
             <input
-              {...register("nombre")}
               name="nombre"
               type="text"
               placeholder="Nombre"
               className="pt-3 pb-2 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-200"
-
+              onChange={handleChange}
+              value={producto.nombre}
             />
           </div>
           <div className="flex flex-col mb-3">
             <input
               name="precio"
               type="number"
-              {...register("precio")}
               placeholder="Precio"
               required
               className="pt-3 pb-2 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-200"
+              onChange={handleChange}
+              value={producto.precio}
             />
           </div>
 
-
-
-
           <div className="flex flex-col mb-3">
-
-            <label className="block text-sm font-medium text-white">Image</label>
+            <label className="block text-sm font-medium text-white">
+              Image
+            </label>
             <div className="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
               <div className="space-y-1 text-center">
                 <svg
@@ -86,7 +108,6 @@ export default function addProcucto() {
                       id="file-upload"
                       name="file-upload"
                       type="file"
-               
                       className="sr-only"
                     />
                   </label>
@@ -95,23 +116,14 @@ export default function addProcucto() {
                 <p className="text-xs text-white">PNG, JPG, GIF up to 10MB</p>
               </div>
             </div>
-
           </div>
         </div>
         <div className="w-full pt-3">
-          <button
-            className="w-full px-6 py-3 mt-3 text-lg text-white transition-all duration-150 ease-linear rounded-lg shadow outline-none bg-black hover:bg-[#181818] hover:shadow-lg focus:outline-none"
-          >
+          <button className="w-full px-6 py-3 mt-3 text-lg text-white transition-all duration-150 ease-linear rounded-lg shadow outline-none bg-black hover:bg-[#181818] hover:shadow-lg focus:outline-none">
             Guardar
           </button>
         </div>
       </form>
     </div>
   );
-
-
-
-
-
-
 }

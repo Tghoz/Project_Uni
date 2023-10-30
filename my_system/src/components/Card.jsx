@@ -1,41 +1,36 @@
-"use client";
+'use client'
 
-
+import Link from "next/link";
 import { FiShoppingCart } from "react-icons/fi";
 
-export default function Card({ game }) {
-
-  const { nombre, precio, img, id_producto } = game;
-
-
-
-  const add = () => {
-    console.log( 'el id del juego es:',  id_producto )
-  }
-
+export default function Card({ producto }) {
   return (
-    <div className="bg-[#202020]  text-white rounded-3xl ">
+    <Link
+    className="bg-[#202020]  text-white rounded-3xl hover:bg-[#232323]"
+    href={'/productos/'+producto.id_producto}
+    > 
       <div className="max-w-sm  h-full">
-        <a>
-          <img className="rounded-t-lg" src={img} alt="" />
-        </a>
-        <div class="p-5">
-          <a>
+          <div>
+          <img className="rounded-t-lg" src={producto.img} alt="" />
+        </div>
+        <div className="p-5">
+          <div>
             <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-              {nombre}
+              {producto.nombre}
             </h5>
-          </a>
+          </div>
           <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
-            {precio}
+            {producto.precio}
           </p>
-          <a
+          
+          <div
             className=" inline-block px-3 py-2 text-sm font-medium cursor-pointer text-white bg-black rounded-lg "
-            onClick={add}
+            onClick={null}
           >
-            <FiShoppingCart size={20}  /> 
-          </a>
+            <FiShoppingCart size={20} />
+          </div>
         </div>
       </div>
-    </div>
-  );
+    </Link>
+  )
 }
