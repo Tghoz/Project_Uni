@@ -5,7 +5,7 @@
 -- Dumped from database version 16.0
 -- Dumped by pg_dump version 16.0
 
--- Started on 2023-10-10 22:40:54
+-- Started on 2023-10-31 07:23:31
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -18,9 +18,9 @@ SET xmloption = content;
 SET client_min_messages = warning;
 SET row_security = off;
 
-DROP DATABASE tienda;
+DROP DATABASE IF EXISTS tienda;
 --
--- TOC entry 4884 (class 1262 OID 16446)
+-- TOC entry 4831 (class 1262 OID 16530)
 -- Name: tienda; Type: DATABASE; Schema: -; Owner: postgres
 --
 
@@ -43,7 +43,7 @@ SET client_min_messages = warning;
 SET row_security = off;
 
 --
--- TOC entry 2 (class 3079 OID 16495)
+-- TOC entry 2 (class 3079 OID 16579)
 -- Name: uuid-ossp; Type: EXTENSION; Schema: -; Owner: -
 --
 
@@ -51,7 +51,7 @@ CREATE EXTENSION IF NOT EXISTS "uuid-ossp" WITH SCHEMA public;
 
 
 --
--- TOC entry 4885 (class 0 OID 0)
+-- TOC entry 4832 (class 0 OID 0)
 -- Dependencies: 2
 -- Name: EXTENSION "uuid-ossp"; Type: COMMENT; Schema: -; Owner: 
 --
@@ -64,7 +64,7 @@ SET default_tablespace = '';
 SET default_table_access_method = heap;
 
 --
--- TOC entry 216 (class 1259 OID 16447)
+-- TOC entry 216 (class 1259 OID 16531)
 -- Name: cliente; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -79,7 +79,7 @@ CREATE TABLE public.cliente (
 ALTER TABLE public.cliente OWNER TO postgres;
 
 --
--- TOC entry 217 (class 1259 OID 16452)
+-- TOC entry 217 (class 1259 OID 16536)
 -- Name: detallefactura; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -97,7 +97,7 @@ CREATE TABLE public.detallefactura (
 ALTER TABLE public.detallefactura OWNER TO postgres;
 
 --
--- TOC entry 218 (class 1259 OID 16457)
+-- TOC entry 218 (class 1259 OID 16541)
 -- Name: factura_num_factura_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -112,7 +112,7 @@ CREATE SEQUENCE public.factura_num_factura_seq
 ALTER SEQUENCE public.factura_num_factura_seq OWNER TO postgres;
 
 --
--- TOC entry 219 (class 1259 OID 16458)
+-- TOC entry 219 (class 1259 OID 16542)
 -- Name: factura; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -129,34 +129,50 @@ CREATE TABLE public.factura (
 ALTER TABLE public.factura OWNER TO postgres;
 
 --
--- TOC entry 220 (class 1259 OID 16464)
+-- TOC entry 220 (class 1259 OID 16548)
 -- Name: producto; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public.producto (
     id_producto integer NOT NULL,
-    nombre character varying(255),
-    precio numeric(10,2)
+    nombre character varying(100),
+    precio numeric(10,2),
+    img character varying(250)
 );
 
 
 ALTER TABLE public.producto OWNER TO postgres;
 
 --
--- TOC entry 221 (class 1259 OID 16509)
+-- TOC entry 222 (class 1259 OID 24593)
+-- Name: producto_id_producto_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+ALTER TABLE public.producto ALTER COLUMN id_producto ADD GENERATED ALWAYS AS IDENTITY (
+    SEQUENCE NAME public.producto_id_producto_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1
+);
+
+
+--
+-- TOC entry 221 (class 1259 OID 16551)
 -- Name: usuario; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public.usuario (
-    usuario_id uuid DEFAULT public.uuid_generate_v4() NOT NULL,
-    correo character varying NOT NULL
+    id_usuario uuid NOT NULL,
+    correo_usuario character varying(255) NOT NULL
 );
 
 
 ALTER TABLE public.usuario OWNER TO postgres;
 
 --
--- TOC entry 4873 (class 0 OID 16447)
+-- TOC entry 4819 (class 0 OID 16531)
 -- Dependencies: 216
 -- Data for Name: cliente; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -164,7 +180,7 @@ ALTER TABLE public.usuario OWNER TO postgres;
 
 
 --
--- TOC entry 4874 (class 0 OID 16452)
+-- TOC entry 4820 (class 0 OID 16536)
 -- Dependencies: 217
 -- Data for Name: detallefactura; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -172,7 +188,7 @@ ALTER TABLE public.usuario OWNER TO postgres;
 
 
 --
--- TOC entry 4876 (class 0 OID 16458)
+-- TOC entry 4822 (class 0 OID 16542)
 -- Dependencies: 219
 -- Data for Name: factura; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -180,24 +196,27 @@ ALTER TABLE public.usuario OWNER TO postgres;
 
 
 --
--- TOC entry 4877 (class 0 OID 16464)
+-- TOC entry 4823 (class 0 OID 16548)
 -- Dependencies: 220
 -- Data for Name: producto; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
+INSERT INTO public.producto OVERRIDING SYSTEM VALUE VALUES (1, 'Valorant', 0.00, 'https://firebasestorage.googleapis.com/v0/b/projec-uni.appspot.com/o/valorant.jpg?alt=media&token=0aef8f81-592e-41a1-9ed9-bff824c2ebcf');
+INSERT INTO public.producto OVERRIDING SYSTEM VALUE VALUES (25, 'LOL', 0.00, 'https://res.cloudinary.com/dpws7owzf/image/upload/v1698675776/ftboumtbiexhucvcwmwl.jpg');
 
 
 --
--- TOC entry 4878 (class 0 OID 16509)
+-- TOC entry 4824 (class 0 OID 16551)
 -- Dependencies: 221
 -- Data for Name: usuario; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-INSERT INTO public.usuario VALUES ('a0541b57-3f32-45ed-a6df-926cac2a5ddd', 'govannytgoz@gmail.com') ON CONFLICT DO NOTHING;
+INSERT INTO public.usuario VALUES ('a8113f98-a155-479b-a74b-cedf204fed54', 'govannytgoz@gmail.com');
+INSERT INTO public.usuario VALUES ('fd060c61-9fe5-45cf-91ac-3a6872f245d8', 'reynaldogonzalez@iujo.edu.ve');
 
 
 --
--- TOC entry 4886 (class 0 OID 0)
+-- TOC entry 4833 (class 0 OID 0)
 -- Dependencies: 218
 -- Name: factura_num_factura_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
@@ -206,7 +225,16 @@ SELECT pg_catalog.setval('public.factura_num_factura_seq', 1, false);
 
 
 --
--- TOC entry 4718 (class 2606 OID 16471)
+-- TOC entry 4834 (class 0 OID 0)
+-- Dependencies: 222
+-- Name: producto_id_producto_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.producto_id_producto_seq', 25, true);
+
+
+--
+-- TOC entry 4664 (class 2606 OID 16555)
 -- Name: cliente cliente_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -215,7 +243,7 @@ ALTER TABLE ONLY public.cliente
 
 
 --
--- TOC entry 4720 (class 2606 OID 16473)
+-- TOC entry 4666 (class 2606 OID 16557)
 -- Name: detallefactura detallefactura_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -224,7 +252,7 @@ ALTER TABLE ONLY public.detallefactura
 
 
 --
--- TOC entry 4722 (class 2606 OID 16475)
+-- TOC entry 4668 (class 2606 OID 16559)
 -- Name: factura factura_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -233,7 +261,7 @@ ALTER TABLE ONLY public.factura
 
 
 --
--- TOC entry 4724 (class 2606 OID 16477)
+-- TOC entry 4670 (class 2606 OID 16561)
 -- Name: producto producto_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -242,16 +270,16 @@ ALTER TABLE ONLY public.producto
 
 
 --
--- TOC entry 4726 (class 2606 OID 16516)
+-- TOC entry 4672 (class 2606 OID 16591)
 -- Name: usuario usuario_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.usuario
-    ADD CONSTRAINT usuario_pkey PRIMARY KEY (usuario_id);
+    ADD CONSTRAINT usuario_pkey PRIMARY KEY (id_usuario);
 
 
 --
--- TOC entry 4727 (class 2606 OID 16480)
+-- TOC entry 4673 (class 2606 OID 16564)
 -- Name: detallefactura detallefactura_id_factura_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -260,7 +288,7 @@ ALTER TABLE ONLY public.detallefactura
 
 
 --
--- TOC entry 4728 (class 2606 OID 16485)
+-- TOC entry 4674 (class 2606 OID 16569)
 -- Name: detallefactura detallefactura_id_producto_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -269,7 +297,7 @@ ALTER TABLE ONLY public.detallefactura
 
 
 --
--- TOC entry 4729 (class 2606 OID 16490)
+-- TOC entry 4675 (class 2606 OID 16574)
 -- Name: factura factura_id_cliente_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -277,7 +305,7 @@ ALTER TABLE ONLY public.factura
     ADD CONSTRAINT factura_id_cliente_fkey FOREIGN KEY (id_cliente) REFERENCES public.cliente(id_cliente);
 
 
--- Completed on 2023-10-10 22:40:54
+-- Completed on 2023-10-31 07:23:31
 
 --
 -- PostgreSQL database dump complete

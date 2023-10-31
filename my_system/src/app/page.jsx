@@ -6,6 +6,7 @@ import { AiFillGithub } from "react-icons/ai";
 import { VscError } from "react-icons/vsc";
 
 import Link from "next/link";
+import axios from "axios";
 
 function noHome() {
   const [email, setEmail] = useState("");
@@ -13,9 +14,12 @@ function noHome() {
 
   const router = useRouter();
 
-  const entrar = () => {
-    if (email.trim() === "govannytgoz@gmail.com") {//<--- aqui va una consulta a la base de datos jiji
 
+
+
+  async function entrar() {
+    const { data } = await axios.get('http://localhost:3000/api/user')
+    if (email.trim() === data[0].correo_usuario || email.trim() === data[1].correo_usuario) {//<--- aqui va una consulta a la base de datos jiji
       router.push("/productos");
     } else if (email.trim() === "") {
       setError("Por favor ingresar un Correo electronico");
